@@ -1,11 +1,9 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../hooks/useAppRedux';
 import { fetchPokemonData } from '../store/thunks';
-import Head from 'next/head';
 import Controls from '../components/Controls';
 import PokemonGallery from '../components/PokemonGallery';
 import Pagination from '../components/Pagination';
-import Meta from '../components/Meta';
 
 export default function Home() {
   const dispatch = useAppDispatch();
@@ -17,7 +15,6 @@ export default function Home() {
 
   return (
     <>
-      <Meta />
       <main className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8">
@@ -30,18 +27,17 @@ export default function Home() {
             </div>
           )}
 
-          <Controls />
-
-          {isLoading ? (
+          {isLoading && (
             <div className="flex justify-center items-center py-8">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
             </div>
-          ) : (
-            <>
-              <PokemonGallery />
-              <Pagination />
-            </>
           )}
+
+          <Controls />
+
+          <PokemonGallery />
+
+          <Pagination />
         </div>
       </main>
     </>
