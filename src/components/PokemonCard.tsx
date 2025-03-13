@@ -1,13 +1,23 @@
 import { Pokemon } from '../types/pokemon';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 interface PokemonCardProps {
   pokemon: Pokemon;
 }
 
 const PokemonCard = ({ pokemon }: PokemonCardProps) => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push(`/pokemon/${pokemon.order}`);
+  };
+
   return (
-    <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 overflow-hidden">
+    <div 
+      className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 overflow-hidden cursor-pointer" 
+      onClick={handleClick}
+    >
       <div className="p-4">
         <div className="relative w-full h-32 flex justify-center items-center bg-gray-50 rounded-md">
           <Image
@@ -38,7 +48,7 @@ const PokemonCard = ({ pokemon }: PokemonCardProps) => {
           
           <div className="flex items-center gap-3">
             <span className="text-sm font-bold text-gray-600">Order:</span>
-            <span className="text-sm text-gray-900">#{pokemon.order}</span>
+            <span className="text-sm text-gray-900">{pokemon.order}</span>
           </div>
         </div>
       </div>
@@ -46,4 +56,4 @@ const PokemonCard = ({ pokemon }: PokemonCardProps) => {
   );
 };
 
-export default PokemonCard; 
+export default PokemonCard;
