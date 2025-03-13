@@ -36,6 +36,7 @@ const Controls = () => {
 
   const handleSortChange = (e: ChangeEvent<HTMLSelectElement>) => {
     dispatch(setSortOrder(e.target.value));
+    dispatch(fetchPokemonData());
   };
 
   const handleItemsPerPageChange = (e: ChangeEvent<HTMLSelectElement>) => {
