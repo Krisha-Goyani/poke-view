@@ -27,7 +27,7 @@ export default function Home() {
         <meta property="og:url" content={siteConfig.url} />
         <meta property="og:title" content={siteConfig.title} />
         <meta property="og:description" content={siteConfig.description} />
-        <meta property="og:image" content={`${siteConfig.url}${siteConfig.ogImage}`} />
+        <meta property="og:image" content="https://poke-views.netlify.app/Image/pokeImg.jpg" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
