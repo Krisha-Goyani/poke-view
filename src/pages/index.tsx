@@ -27,14 +27,14 @@ export default function Home() {
         <meta property="og:url" content={siteConfig.url} />
         <meta property="og:title" content={siteConfig.title} />
         <meta property="og:description" content={siteConfig.description} />
-        <meta property="og:image" content="https://poke-views.netlify.app/Image/pokeImg.png" />
+        <meta property="og:image" content={siteConfig.ogImage} />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content={siteConfig.url} />
         <meta property="twitter:title" content={siteConfig.title} />
         <meta property="twitter:description" content={siteConfig.description} />
-        <meta property="twitter:image" content={`${siteConfig.url}${siteConfig.ogImage}`} />
+        <meta property="twitter:image" content={siteConfig.ogImage} />
       </Head>
 
       <main className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
