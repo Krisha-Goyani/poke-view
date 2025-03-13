@@ -5,7 +5,7 @@ import Head from 'next/head';
 import Controls from '../components/Controls';
 import PokemonGallery from '../components/PokemonGallery';
 import Pagination from '../components/Pagination';
-import siteConfig from '../config/site';
+import Meta from '../components/Meta';
 
 export default function Home() {
   const dispatch = useAppDispatch();
@@ -17,36 +17,7 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>{siteConfig.title}</title>
-        <meta charSet="UTF-8" />
-        <meta name="description" content={siteConfig.description} />
-        <meta name="keywords" content="Pokemon, Gallery, Pokedex, Pokemon Images, Pokemon Stats" />
-        <meta name="author" content="Your Name or Company" />
-        <meta name="robots" content="index, follow" />
-        <meta name="language" content="English" />
-        <link rel="canonical" href={siteConfig.url} />
-
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={siteConfig.url} />
-        <meta property="og:site_name" content={siteConfig.title} />
-        <meta property="og:title" content={siteConfig.title} />
-        <meta property="og:description" content={siteConfig.description} />
-        <meta property="og:image" content={siteConfig.ogImage} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Pokemon Gallery" />
-        <meta property="og:locale" content="en_US" />
-
-        {/* Twitter */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content={siteConfig.url} />
-        <meta property="twitter:title" content={siteConfig.title} />
-        <meta property="twitter:description" content={siteConfig.description} />
-        <meta property="twitter:image" content={siteConfig.ogImage} />
-      </Head>
-
+      <Meta />
       <main className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8">

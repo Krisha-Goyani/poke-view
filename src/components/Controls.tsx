@@ -1,4 +1,4 @@
-import { useCallback, ChangeEvent } from 'react';
+import { ChangeEvent, useCallback } from 'react';
 import { useAppDispatch, useAppSelector } from '../hooks/useAppRedux';
 import { 
   setSearchTerm, 
@@ -36,7 +36,6 @@ const Controls = () => {
 
   const handleSortChange = (e: ChangeEvent<HTMLSelectElement>) => {
     dispatch(setSortOrder(e.target.value));
-    dispatch(fetchPokemonData());
   };
 
   const handleItemsPerPageChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -60,7 +59,7 @@ const Controls = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+    <div className="flex flex-wrap gap-4 mb-8 justify-center">
       {/* Search Input */}
       <div className="relative">
         <input
